@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<request_for_catalogue_item_notification:requestForCatalogueItemNotificationMessage xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:gs1:gdsn:request_for_catalogue_item_notification:xsd:3 http://www.gdsregistry.org/3.1/schemas/gs1/gdsn/RequestForCatalogueItemNotification.xsd" xmlns:request_for_catalogue_item_notification="urn:gs1:gdsn:request_for_catalogue_item_notification:xsd:3">
+<sh:StandardBusinessDocumentHeader>
+<sh:HeaderVersion>1.0</sh:HeaderVersion>
+<sh:Sender>
+<sh:Identifier Authority="GS1">8712345013103</sh:Identifier>
+</sh:Sender>
+<sh:Receiver>
+<sh:Identifier Authority="GS1">8712345013042</sh:Identifier>
+</sh:Receiver>
+<sh:DocumentIdentification>
+<sh:Standard>GS1</sh:Standard>
+<sh:TypeVersion>3.1</sh:TypeVersion>
+<sh:InstanceIdentifier>RFCIN_8712345013103_hqvorlsx</sh:InstanceIdentifier>
+<sh:Type>requestForCatalogueItemNotification</sh:Type>
+<sh:CreationDateAndTime>2023-01-05T12:01:13</sh:CreationDateAndTime>
+</sh:DocumentIdentification>
+</sh:StandardBusinessDocumentHeader>
+<transaction>
+<transactionIdentification>
+<entityIdentification>RFCIN_ADD_8712345013103_dgzhjymu</entityIdentification>
+<contentOwner>
+<gln>8712345013103</gln>
+</contentOwner>
+</transactionIdentification>
+<documentCommand>
+<documentCommandHeader type="ADD">
+<documentCommandIdentification>
+<entityIdentification>RFCIN_ADD_8712345013103_bmrsmwyn</entityIdentification>
+<contentOwner>
+<gln>8712345013103</gln>
+</contentOwner>
+</documentCommandIdentification>
+</documentCommandHeader>
+<request_for_catalogue_item_notification:requestForCatalogueItemNotification>
+<creationDateTime>2023-01-05T12:01:13</creationDateTime>
+<documentStatusCode>ADDITIONAL_TRANSMISSION</documentStatusCode>
+<catalogueItemSubscriptionIdentification>
+<entityIdentification>Item_8717522000006_528_bmrsmwyn</entityIdentification>
+<contentOwner>
+<gln>8712345013103</gln>
+</contentOwner>
+</catalogueItemSubscriptionIdentification>
+<dataRecipient>8712345013103</dataRecipient>
+<dataSource>8717522000006</dataSource>
+<gtin>08717522210344</gtin>
+<recipientDataPool>8712345013042</recipientDataPool>
+<targetMarket>
+<targetMarketCountryCode>528</targetMarketCountryCode>
+</targetMarket>
+<isReload>false</isReload>
+</request_for_catalogue_item_notification:requestForCatalogueItemNotification>
+</documentCommand>
+</transaction>
+</request_for_catalogue_item_notification:requestForCatalogueItemNotificationMessage>
