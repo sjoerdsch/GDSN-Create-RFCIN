@@ -12,10 +12,13 @@ More information about the Global Data Synchronisation Network (GDSN): https://w
 1. Create a csv file in the input directory with the structure:
 
 > gln_ds,gtin,tm (for one gtin per row)
-> or gln,tm (for all published gtins of a supplier)
+
+> or gln_ds,tm (for all published gtins of a supplier)
 
 > gln_ds = GLN Data source
+
 > gtin = Global Trade Item Number
+
 > tm = target_market
 
 2. Change (if needed) the data_pool_gln in the source code

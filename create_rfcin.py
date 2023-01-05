@@ -34,11 +34,11 @@ sender_gln = '8712345013103'
 gtin_included = False
 
 if gtin_included:
-    headers = ['gln','gtin','tm']
+    headers = ['gln_ds','gtin','tm']
     if source_file == "test_file":
         source_file = "test_file_gtin"
 else:
-    headers = ['gln', 'tm']
+    headers = ['gln_ds', 'tm']
 
 infile = ".\input\\" + source_file + ".csv"
 
@@ -63,7 +63,7 @@ with open(infile, 'r', encoding='utf-8', errors='ignore') as fp:
 
     reader = csv.DictReader(fp, fieldnames=headers, skipinitialspace=True)
     for row in reader:
-        if row.get('gln') != 'gln':
+        if row.get('gln_ds') != 'gln_ds':
             time_sys = time.strftime("%Y-%m-%dT%H:%M:%S")
             file_id = get_random_string(8)
             if cntr % batch_size == 0:
@@ -71,7 +71,7 @@ with open(infile, 'r', encoding='utf-8', errors='ignore') as fp:
                 batch = f'.\output\\{source_file}\\batch_' + str(b_nr).zfill(3)
                 if not os.path.exists(batch):
                     os.makedirs(batch)
-            file_name = batch + '\\' + "RFCIN_" + sender_gln + "_" + source_file + "_" + row.get('gln') + "_"  + row.get('tm') + "_" + file_id + ".xml"
+            file_name = batch + '\\' + "RFCIN_" + sender_gln + "_" + source_file + "_" + row.get('gln_ds') + "_"  + row.get('tm') + "_" + file_id + ".xml"
             inst_id = get_random_string(8)
             outfile = open(str(file_name), "w", encoding='utf-8')
             outfile.write('<?xml version="1.0" encoding="utf-8"?>\n')
