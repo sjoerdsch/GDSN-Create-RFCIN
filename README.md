@@ -26,7 +26,7 @@ More information about the Global Data Synchronisation Network (GDSN): https://w
 
 3. Run the program from the command prompt with the name of the csv-file as parameter
 
-> create_cis.py test_file
+> create_rfcin.py test_file
 
 4. In the directory output a new directory will be created with the same name as the csv file.
    In the created directory there a one or more batches with RFCIN messages. The batchsize can be changed in the source code.
