@@ -1,3 +1,8 @@
+"""
+The RFCIN message is used by a data recipient and is a request to resend the published items (one gtin or all items).
+Author: Sjoerd Schaper - GS1 Nederland
+"""
+
 import csv
 import pprint
 import json
