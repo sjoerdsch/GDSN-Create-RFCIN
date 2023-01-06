@@ -40,12 +40,12 @@ if gtin_included:
 else:
     headers = ['gln_ds', 'tm']
 
-infile = ".\input\\" + source_file + ".csv"
+infile = os.path.join('input', source_file + '.csv')
 
 # To prevent overloading the data pool the messages are split up in batches  
 batch_size = 100
 
-batch = f".\output\\{source_file}\\batch_001"
+batch = os.path.join('output',source_file,'batch_001')
 if not os.path.exists(batch):
     os.makedirs(batch)
 
@@ -55,9 +55,6 @@ b_nr = 1
 # ISReload is a GSDN option
 is_reload = 'false'
 
-output_dir = '.\output\\' + source_file
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir)
 
 with open(infile, 'r', encoding='utf-8', errors='ignore') as fp:
 
@@ -68,10 +65,10 @@ with open(infile, 'r', encoding='utf-8', errors='ignore') as fp:
             file_id = get_random_string(8)
             if cntr % batch_size == 0:
                 b_nr = b_nr + 1
-                batch = f'.\output\\{source_file}\\batch_' + str(b_nr).zfill(3)
+                batch = os.path.join('output',source_file, 'batch_' + str(b_nr).zfill(3))
                 if not os.path.exists(batch):
                     os.makedirs(batch)
-            file_name = batch + '\\' + "RFCIN_" + sender_gln + "_" + source_file + "_" + row.get('gln_ds') + "_"  + row.get('tm') + "_" + file_id + ".xml"
+            file_name = os.path.join(batch,f"RFCIN_" + sender_gln + "_" + source_file + "_" + row.get('gln_ds') + "_"  + row.get('tm') + "_" + file_id + ".xml")
             inst_id = get_random_string(8)
             outfile = open(str(file_name), "w", encoding='utf-8')
             outfile.write('<?xml version="1.0" encoding="utf-8"?>\n')
